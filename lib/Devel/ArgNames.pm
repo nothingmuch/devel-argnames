@@ -91,7 +91,7 @@ commit changes.
 
 Ran Eilam
 
-Yuval Kogman E<gt>nothingmuch@woobling.orgE<lt>
+Yuval Kogman E<lt>nothingmuch@woobling.orgE<gt>
 
 =head1 COPYRIGHT
 
