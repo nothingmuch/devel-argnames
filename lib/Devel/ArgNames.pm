@@ -11,7 +11,7 @@ use base qw(Exporter);
 
 our @EXPORT_OK = our @EXPORT = qw(arg_names);
 
-use PadWalker qw(peek_my peek_our closed_over);
+use PadWalker qw(peek_my peek_our);
 
 sub arg_names (\@;$) {
 	my ( $args, $level ) = @_;
