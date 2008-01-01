@@ -13,12 +13,10 @@ our @EXPORT_OK = our @EXPORT = qw(arg_names);
 
 use PadWalker qw(peek_my peek_our);
 
-sub arg_names (\@;$) {
-	my ( $args, $level ) = @_;
-
-	$level ||= 2;
-
-	@{{ reverse %{ peek_my($level) }, %{ peek_our($level) } }}{\(@$args)};
+sub arg_names (;$) {
+	my $level = shift || 2;
+	{ package DB; () = caller($level - 1) }
+	@{{ reverse %{peek_my($level)}, %{peek_our($level)} }}{\(@DB::args)};
 }
 
 __PACKAGE__
@@ -53,7 +51,7 @@ With this module, you can write a reusable subroutine easily:
 	sub my_print_vars {
 		my %vars;
 
-		@vars{arg_names(@_)} = @_;
+		@vars{arg_names()} = @_;
 
 		foreach my $var ( keys %vars ) {
 			warn "$var is $vars{$var}\n";
@@ -69,15 +67,11 @@ choose from. This is a DIY kit ;-)
 
 =over 4
 
-=item arg_names @_, [ $level ]
+=item arg_names [ $level ]
 
 This function will return the names associated with the variables found on
 C<@_>, at the level $level. If C<$level> is not provided C<arg_names>'s
 caller's caller will be used (C<<$level == 2>> in that case).
-
-Note that you B<MUST> pass in C<@_> every single time. There is no way to get the
-original aliases to the values using L<Devel::Caller> or
-L<Devel::Caller::Perl>. Commits welcome!
 
 =back
 

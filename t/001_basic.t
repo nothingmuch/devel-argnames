@@ -7,7 +7,7 @@ use Test::More 'no_plan';
 
 use ok 'Devel::ArgNames';
 
-sub foo { arg_names(@_) }
+sub foo { arg_names() }
 
 my ( $bar, $gorch, @blah );
 
