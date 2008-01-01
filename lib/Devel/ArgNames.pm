@@ -27,7 +27,7 @@ __END__
 
 =head1 NAME
 
-Devel::ArgNames - Figure out the names of variables passed into @_
+Devel::ArgNames - Figure out the names of variables passed into subroutines.
 
 =head1 SYNOPSIS
 
