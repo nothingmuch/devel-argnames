@@ -81,6 +81,11 @@ This module is maintained using Darcs. You can get the latest version from
 L<http://nothingmuch.woobling.org/Devel-ArgNames/>, and use C<darcs send> to
 commit changes.
 
+=head1 SEE ALSO
+
+L<Data::Dumper::Simple>, L<DB>, L<Devel::Caller>, L<Devel::Caller::Perl>,
+L<PadWalker>.
+
 =head1 AUTHORS
 
 Ran Eilam
