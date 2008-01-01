@@ -71,7 +71,7 @@ choose from. This is a DIY kit ;-)
 
 This function will return the names associated with the variables found on
 C<@_>, at the level $level. If C<$level> is not provided C<arg_names>'s
-caller's caller will be used (C<<$level == 2>> in that case).
+caller's caller will be used (C<$level == 2> in that case).
 
 =back
 
