@@ -1,3 +1,7 @@
+0.03
+	- missing dep
+	- doc improvements
+
 0.02
 	- Use @DB::args
 
