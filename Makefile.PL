@@ -12,6 +12,7 @@ WriteMakefile(
 	PL_FILES     => { },
 	PREREQ_PM    => {
 		PadWalker => 0,
+		'Test::use::ok' => 0,
 	},
 );
 
